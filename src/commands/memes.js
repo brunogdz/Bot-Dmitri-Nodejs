@@ -9,13 +9,14 @@ const execute = (bot, msg, args) => {
             embed = new MessageEmbed()
                 .setImage(image)
                 .setTimestamp()
-                .setFooter('from: r/meme')
+                .setFooter('from: r/memesBrasil')
         msg.channel.send(embed);
     }).catch(console.log)
 }
 
 module.exports = {
     name: "memes",
+    aliases: ["meme"],
     help: "Retorna um meme aleatório do reddit",
     execute,
 };

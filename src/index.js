@@ -31,20 +31,15 @@ bot.on("ready", function () {
 
     console.log(`Estou conectado como ${bot.user.username}`);
     console.log()
-    const s1 = bot.user.setActivity('Estou online', { type: 'STREAMING', url: 'https://www.twitch.tv/dmitritv' })
-    // const s2 = activities;
-    // // intervalo entre status
-    // function randomStatus() {
-    //     let status = ["Discord bot",]
-    // }
+
     const activities_list = [
         "Streaming",
         "Watching",
         "digite .help",
         "Estou on"
     ]; // creates an arraylist containing phrases you want your bot to switch through.
-    
-    bot.user.setActivity(`em ${bot.user.guilds}`)
+
+
     setInterval(() => {
         const index = Math.floor(Math.random() * (activities_list.length)); // generates a random number between 1 and the length of the activities array list (in this case 5).
         if (index == 1) {
@@ -52,14 +47,14 @@ bot.on("ready", function () {
         }
 
         if (index == 2) {
-            bot.user.setActivity('digite .help', { type: 'LISTENING'}) // sets bot's activities to one of the phrases in the arraylist.
+            bot.user.setActivity('digite .help', { type: 'LISTENING' }) // sets bot's activities to one of the phrases in the arraylist.
         }
 
         if (index == 3) {
-            bot.user.setActivity(`ON ${bot.guilds.cache.size}`, {type: 'LISTENING'})
+            bot.user.setActivity(`ON em ${bot.user.guilds}`, { type: 'LISTENING' })
         }
 
-        bot.user.setActivity('.help', {type: 'WATCHING'})
+        bot.user.setActivity('.help', { type: 'WATCHING' })
 
     }, 10000); // Runs this every 10 seconds.
 });
@@ -72,8 +67,13 @@ bot.on("message", (msg) => {
     const command = args.shift();
 
     try {
-        bot.commands.get(command).execute(bot, msg, args);
+        const command = bot.commands.get(commandName)
+            || bot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
+        if (!command) throw Error("comando nao encontrado");
+        command.execute(bot, msg, args)
+
     } catch (e) {
+        console.error(e)
         return msg.reply("Ops! Não aprendi esse comando ainda!");
     }
 });

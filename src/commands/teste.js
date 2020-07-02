@@ -16,6 +16,6 @@ const execute = (bot, msg, args) => {
 
 module.exports = {
     name: "teste",
-    help: "Exibe a ajuda de todos os comandos",
+    help: "Comando em beta, para outras coisas",
     execute,
 };
