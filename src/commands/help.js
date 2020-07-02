@@ -8,7 +8,7 @@ const execute = (bot, msg, args) => {
     // return msg.channel.send(string);
     const embed = new MessageEmbed()
         .setTitle("Olá! :)")
-        .setDescription(string)
+        .setDescription(`${string}`)
     msg.channel.send(embed);
 };
 
