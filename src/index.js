@@ -64,7 +64,7 @@ bot.on("message", (msg) => {
     if (!msg.content.startsWith(process.env.PREFIX) || msg.author.bot) return;
 
     const args = msg.content.slice(process.env.PREFIX.length).split(" ");
-    const command = args.shift();
+    const commandName = args.shift();
 
     try {
         const command = bot.commands.get(commandName)
