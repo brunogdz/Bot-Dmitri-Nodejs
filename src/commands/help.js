@@ -1,15 +1,11 @@
 const execute = (bot, msg, args) => {
-    let string = "\n";
+    let string = "==== AJUDA ====\n\n";
     bot.commands.forEach((command) => {
         if (command.help) {
             string += `**${process.env.PREFIX}${command.name}**: ${command.help}\n`;
         }
     });
-    // return msg.channel.send(string);
-    const embed = new MessageEmbed()
-        .setTitle("Olá! :)")
-        .setDescription(`${string}`)
-    msg.channel.send(embed);
+    return msg.channel.send(string);
 };
 
 module.exports = {
