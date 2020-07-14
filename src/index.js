@@ -74,6 +74,6 @@ bot.on("message", (msg) => {
 
     } catch (e) {
         console.error(e)
-        return msg.reply("Ops! Não aprendi esse comando ainda!");
+        // return msg.reply("Ops! Não aprendi esse comando ainda!");
     }
 });
