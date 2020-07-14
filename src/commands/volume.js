@@ -16,6 +16,7 @@ const execute = (bot, msg, args) => {
 
 module.exports = {
     name: "vol",
+    aliases: ["volume"],
     help: "Ajusta o volume numa escala de 0 a 10",
     execute,
 };
