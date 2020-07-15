@@ -12,8 +12,21 @@ const execute = (bot, msg, args) => {
                 const song = result.videos[0];
                 const queue = bot.queues.get(msg.guild.id);
                 if (queue) {
+                    const l = queue.songs.length;
                     queue.songs.push(song);
                     bot.queues.set(msg.guild.id, queue);
+                    const embed = new MessageEmbed()
+                        .setColor("#0099ff")
+                        .setAuthor(
+                            "Adicionada na fila ♪ ...",
+                            "https://media.giphy.com/media/ccu9c0Iu7aGFa/giphy.gif"
+                        )
+                        .setTitle(queue.songs[l].title)
+                        .setDescription(`Musica adicionada na posição: ${l}`)
+                        .setThumbnail(queue.songs[l].thumbnail);
+ 
+                    msg.channel.send(embed);
+
                 } else playSong(bot, msg, song);
             } else {
                 return msg.reply("Desculpa, não achei a musica")
@@ -34,7 +47,19 @@ const playSong = async (bot, msg, song) => {
     }
     if (!msg.member.voice.channel) {
         return msg.reply("Você precisa estar em um canal para reproduzir");
+
     }
+
+    const r = new MessageEmbed()
+        .setColor("#0099ff")
+        .setAuthor(
+            "Tocando ♪ ...",
+            "https://media.giphy.com/media/ccu9c0Iu7aGFa/giphy.gif"
+        )
+        .setTitle(`${song.title}`)
+        .setThumbnail(song.thumbnail)
+    msg.channel.send(r);
+
 
     if (!queue) {
         const conn = await msg.member.voice.channel.join();
@@ -44,15 +69,9 @@ const playSong = async (bot, msg, song) => {
             dispatcher: null,
             songs: [song],
         };
-        
+
         bot.queues.set(msg.member.guild.id, queue);
-        const embed = new MessageEmbed()
-        .setColor('#0099ff')
-        .setTitle(`Música adicionada: ${queue.songs[0].title}`);
 
-
-        msg.channel.send(embed);
-        
     }
     queue.dispatcher = await queue.connection.play(
         await ytdl(song.url, { highWaterMark: 1 << 25, filter: "audioonly" }),
@@ -60,17 +79,18 @@ const playSong = async (bot, msg, song) => {
             type: "opus",
         }
     );
+
     queue.dispatcher.on("finish", () => {
-        queue.songs.shift(); 
+        queue.songs.shift();
         playSong(bot, msg, queue.songs[0]);
-        
+
     });
-    
+
 };
 
 module.exports = {
     name: "play",
-    aliases: ["p","tocar"],
+    aliases: ["p", "tocar"],
     help: "Reproduz a música desejada no canal atual do usuário! Pode usar o .p e .tocar",
     execute,
     playSong,

@@ -51,12 +51,12 @@ bot.on("ready", function () {
         }
 
         if (index == 3) {
-            bot.user.setActivity(`ON em ${bot.user.guilds}`, { type: 'LISTENING' })
+            bot.user.setActivity('Estou online', { type: 'STREAMING', url: 'https://www.twitch.tv/dmitritv' })
         }
 
         bot.user.setActivity('.help', { type: 'WATCHING' })
 
-    }, 10000); // Runs this every 10 seconds.
+    }, 20000); // Runs this every 10 seconds.
 });
 
 
