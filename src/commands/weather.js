@@ -8,12 +8,12 @@ async function execute(bot, msg, args) {
         .setTitle(`Clima da cidade: ${dadosAPI.Cidade}`)
         .setDescription("Mostrando algumas informações sobre o clima da cidade que você digitou. Lembrando que tem que colocar o Estado após a cidade, separando com virgula")
         .addFields(
-            {name: `Data hoje:${dadosAPI.data1}`, value:"⠀"},
-            {name: `Maxima hoje:${dadosAPI.Max1}`, value: "⠀"},
-            {name: `Minima hoje:${dadosAPI.Min1}`, value: "⠀"},
+            {name: `Data hoje:${dadosAPI.data1}`, value:"⠀", inline: true},
+            {name: `Máxima hoje:${dadosAPI.Max1}`, value: "⠀", inline: true},
+            {name: `Mínima hoje:${dadosAPI.Min1}`, value: "⠀", inline: true},
             {name: `Amanhã:${dadosAPI.data2}`, value: "⠀", inline: true},
-            {name: `Maxima amanhã:${dadosAPI.Max2}`, value: "⠀", inline: true},
-            {name: `Maxima amanhã:${dadosAPI.Min2}`, value: "⠀", inline: true},
+            {name: `Máxima amanhã:${dadosAPI.Max2}`, value: "⠀", inline: true},
+            {name: `Mínima amanhã:${dadosAPI.Min2}`, value: "⠀", inline: true},
             {name: `Tempo está:${dadosAPI.Descricao}`, value: "⠀"},
             {name: `Umidade: ${dadosAPI.Umidade}%`, value: "⠀"},
             {name: `Vento: ${dadosAPI.Speed}`, value: "⠀"},
