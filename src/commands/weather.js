@@ -18,7 +18,7 @@ async function execute(bot, msg, args) {
             {name: `Umidade: ${dadosAPI.Umidade}%`, value: "⠀"},
             {name: `Vento: ${dadosAPI.Speed}`, value: "⠀"},
             {name: `Sol nascendo às: ${dadosAPI.Nascer}`, value: "⠀"},
-            {name: `Sol nascendo às: ${dadosAPI.Por}`, value: "⠀", inline: true},
+            {name: `Sol se põe às: ${dadosAPI.Por}`, value: "⠀", inline: true},
             {name: `Horas agora: ${dadosAPI.Hora}`, value: "⠀"}
             
         )
