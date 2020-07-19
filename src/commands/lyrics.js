@@ -46,20 +46,107 @@ async function execute(bot, msg, args) {
                 .setAuthor(`${artist} - ${name}`)
                 .setColor('#EBAE34')
                 .setThumbnail(albumArt)
-                .setDescription(lyrics);
+                .setDescription(lyrics)
+                .setFooter('Powered by KSoft.Si');
             return sentmsg.edit('', lyricsEmbed);
         } else {
-            const firstLyricsEmbed = new MessageEmbed()
-                .setAuthor(`${artist} - ${name}`)
-                .setColor('#EBAE34')
-                .setThumbnail(albumArt)
-                .setDescription(lyrics.slice(0, 2048));
-            const secondLyricsEmbed = new MessageEmbed()
-                .setColor('#EBAE34')
-                .setDescription(lyrics.slice(2048, lyrics.length));
-            sentmsg.edit('', firstLyricsEmbed);
-            msg.channel.send(secondLyricsEmbed);
-            return;
+            // const firstLyricsEmbed = new MessageEmbed()
+            //     .setAuthor(`${artist} - ${name}`)
+            //     .setColor('#EBAE34')
+            //     .setThumbnail(albumArt)
+            //     .setDescription(lyrics.slice(0, 2048));
+            // const secondLyricsEmbed = new MessageEmbed()
+            //     .setColor('#EBAE34')
+            //     .setDescription(lyrics.slice(2048, lyrics.length))
+            //     .setFooter('Powered by KSoft.Si');
+            // sentmsg.edit('', firstLyricsEmbed);
+            // msg.channel.send(secondLyricsEmbed);
+            // return;
+            const partsToSlice = parseInt(lyrics.length / 1024);
+            const valor = lyrics.length / 1024;
+            console.log(valor)
+            console.log(partsToSlice)
+            const part1 = lyrics.slice(0, 1024);
+            const part2 = lyrics.slice(1024, 2048);
+            const part3 = lyrics.slice(2049, 3072);
+            const part4 = lyrics.slice(3073, 4096);
+            const part5 = lyrics.slice(4097, 5121);
+            const part6 = lyrics.slice(5122, 5800);
+            if ((lyrics.length < 2049)) {
+                const firstLyricsEmbed = new MessageEmbed()
+                    .setAuthor(`${artist} - ${name}`)
+                    .setColor('#EBAE34')
+                    .setThumbnail(albumArt)
+                    .setFooter('Powered by KSoft.Si')
+                    .addFields(
+                        { name: '⠀', value: part1 },
+                        { name: '⠀', value: part2 },
+                    );
+                sentmsg.edit('', firstLyricsEmbed);
+            }
+
+            if ((lyrics.length < 3073)) {
+                const firstLyricsEmbed = new MessageEmbed()
+                    .setAuthor(`${artist} - ${name}`)
+                    .setColor('#EBAE34')
+                    .setThumbnail(albumArt)
+                    .setFooter('Powered by KSoft.Si')
+                    .addFields(
+                        { name: '⠀', value: part1 },
+                        { name: '⠀', value: part2 },
+                        { name: '⠀', value: part3 },
+                    );
+                sentmsg.edit('', firstLyricsEmbed);
+            }
+
+            if ((lyrics.length < 4097)) {
+                const firstLyricsEmbed = new MessageEmbed()
+                    .setAuthor(`${artist} - ${name}`)
+                    .setColor('#EBAE34')
+                    .setThumbnail(albumArt)
+                    .setFooter('Powered by KSoft.Si')
+                    .addFields(
+                        { name: '⠀', value: part1 },
+                        { name: '⠀', value: part2 },
+                        { name: '⠀', value: part3 },
+                        { name: '⠀', value: part4 },
+                    );
+                sentmsg.edit('', firstLyricsEmbed);
+            }
+
+            if ((lyrics.length < 5122)) {
+                const firstLyricsEmbed = new MessageEmbed()
+                    .setAuthor(`${artist} - ${name}`)
+                    .setColor('#EBAE34')
+                    .setThumbnail(albumArt)
+                    .setFooter('Powered by KSoft.Si')
+                    .addFields(
+                        { name: '⠀', value: part1 },
+                        { name: '⠀', value: part2 },
+                        { name: '⠀', value: part3 },
+                        { name: '⠀', value: part4 },
+                        { name: '⠀', value: part5 },
+                    );
+                sentmsg.edit('', firstLyricsEmbed);
+            }
+
+            if (partsToSlice == 6) {
+                const firstLyricsEmbed = new MessageEmbed()
+                    .setAuthor(`${artist} - ${name}`)
+                    .setColor('#EBAE34')
+                    .setThumbnail(albumArt)
+                    .setFooter('Powered by KSoft.Si')
+                    .addFields(
+                        { name: '⠀', value: part1 },
+                        { name: '⠀', value: part2 },
+                        { name: '⠀', value: part3 },
+                        { name: '⠀', value: part4 },
+                        { name: '⠀', value: part5 },
+                        { name: '⠀', value: part6 },
+                    );
+                sentmsg.edit('', firstLyricsEmbed);
+            }
+
         }
     } catch (e) {
         console.error(e)
