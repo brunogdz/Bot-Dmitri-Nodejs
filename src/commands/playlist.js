@@ -102,6 +102,7 @@ async function execute(bot, msg, args) {
 
 module.exports = {
     name: "playlist",
+    aliases: ["pl"],
     help: "Toca a playlist, só colocar o link [ESTÁ EM BETA]",
     execute,
 };
