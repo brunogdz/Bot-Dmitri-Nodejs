@@ -1,10 +1,7 @@
 const ytpl = require("ytpl")
-const Discord = require("discord.js");
+const Discord = require("discord.js")
 const ytdl = require("ytdl-core-discord");
-const dotenv = require("dotenv");
 const search = require("yt-search");
-const ytsr = require('ytsr');
-const ytlist = require('youtube-playlist')
 const MessageEmbed = require("discord.js").MessageEmbed;
 
 const playSong = require("./play").playSong;
