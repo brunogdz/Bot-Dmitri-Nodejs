@@ -6,7 +6,7 @@ const execute = (bot, msg, args) => {
         .setAuthor('Dmitri BOT')
         .setDescription('Convide o bot para o servidor usando esse link! :)')
         .setTitle("Só clicar aqui!")
-        .setURL("https://discord.com/api/oauth2/authorize?client_id=714331640867979304&permissions=2138439127&scope=bot")
+        .setURL("https://discord.com/api/oauth2/authorize?client_id=714331640867979304&permissions=2117598535&scope=bot")
     //msg.channel.send('https://discord.com/api/oauth2/authorize?client_id=714331640867979304&permissions=2138439127&scope=bot')
     return msg.channel.send(convida);
 };
