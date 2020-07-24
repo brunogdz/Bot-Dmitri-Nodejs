@@ -8,6 +8,11 @@ const playSong = require("./play").playSong;
 
 async function execute(bot, msg, args) {
     const s = args.join(" ");
+    if (!msg.member.voice.channel) {
+                            
+                            
+        return msg.reply("Você precisa estar em um canal para reproduzir");
+    }
     try {
         let playlist = null;
         playlist = await ytpl(s);
@@ -36,9 +41,9 @@ async function execute(bot, msg, args) {
                         queue.songs.push(song);
                         bot.queues.set(msg.guild.id, queue);
 
-                    } if (!queue) {
+                    } if(!queue) {
 
-
+                        
                         const conn = await msg.member.voice.channel.join();
                         queue = {
                             volume: 10,
@@ -48,7 +53,7 @@ async function execute(bot, msg, args) {
                         };
                         bot.queues.set(msg.member.guild.id, queue);
 
-                        const ProximaMusica = queue.songs.song;
+
                         // const r = new MessageEmbed()
                         //     .setColor("#0099ff")
                         //     .setAuthor(

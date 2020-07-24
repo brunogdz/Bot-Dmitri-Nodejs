@@ -46,6 +46,15 @@ const playSong = async (bot, msg, song) => {
         }
     }
     if (!msg.member.voice.channel) {
+        if (queue) {
+            queue.connection.disconnect();
+            const r = new MessageEmbed()
+                .setColor("#0099ff")
+                .setTitle("Me deixou aqui na call solo :( vou sair aqui ")
+            msg.channel.send(r);
+            return
+        }
+
         return msg.reply("Você precisa estar em um canal para reproduzir");
 
     }
