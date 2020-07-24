@@ -50,7 +50,7 @@ const playSong = async (bot, msg, song) => {
             queue.connection.disconnect();
             const r = new MessageEmbed()
                 .setColor("#0099ff")
-                .setTitle("Me deixou aqui na call solo :( vou sair aqui ")
+                .setTitle("Me deixou aqui na call solo 😢 vou sair aqui 😭")
             msg.channel.send(r);
             return
         }
