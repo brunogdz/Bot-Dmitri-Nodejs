@@ -30,7 +30,7 @@ const activities = [`${bot.guilds.size} servers!`, "Duvidas? digite .help"]
 bot.on("ready", function () {
 
     console.log(`Estou conectado como ${bot.user.username}`);
-    console.log()
+    console.log(bot.guilds.cache.size)
 
     const activities_list = [
         "Streaming",
