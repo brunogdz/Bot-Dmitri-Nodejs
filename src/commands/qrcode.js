@@ -6,6 +6,7 @@ async function execute(bot, msg, args) {
 
     const validar = isValidURL(s)
     if (validar == true) {
+        const linkB = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data"
         const linkNovo = `${linkB}=${encodeURI(s)}`
         const embed = new MessageEmbed()
             .setTitle("QR-CODE do link meu consagrado",
