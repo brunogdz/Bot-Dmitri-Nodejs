@@ -10,7 +10,7 @@ async function execute(bot, msg, args) {
         const linkNovo = `${linkB}=${encodeURI(s)}`
         const embed = new MessageEmbed()
             .setAuthor("QR-CODE do link meu consagrado",
-            "https://media.giphy.com/media/ZZrnJf8MDCLPquEVu3/giphy.gif")
+            "https://media.giphy.com/media/XbZ1FZ4xtzDKE/giphy.gif")
             .setImage(linkNovo)
         msg.channel.send(embed);
     } else {
