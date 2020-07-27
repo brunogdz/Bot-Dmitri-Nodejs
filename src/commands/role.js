@@ -28,7 +28,7 @@ async function execute(bot, msg, args) {
             const role = msg.guild.roles.cache.find((r) => r.name === roleArg || r.id === id2);
             if (!role) return msg.reply(`não encontrei o cargo \`${roleArg}\``);
             member.roles.add(role);
-            msg.channel.send(`${user} agora tem o cargo ${role} ✅`)
+            msg.channel.send(`${member} agora tem o cargo ${role} ✅`)
         }
     } catch (e) {
         console.error(e);
