@@ -9,7 +9,7 @@ async function execute(bot, msg, args) {
         const linkB = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data"
         const linkNovo = `${linkB}=${encodeURI(s)}`
         const embed = new MessageEmbed()
-            .setTitle("QR-CODE do link meu consagrado",
+            .setAuthor("QR-CODE do link meu consagrado",
             "https://media.giphy.com/media/ZZrnJf8MDCLPquEVu3/giphy.gif")
             .setImage(linkNovo)
         msg.channel.send(embed);
