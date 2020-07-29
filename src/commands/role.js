@@ -7,7 +7,9 @@ async function execute(bot, msg, args) {
         if (!msg.member.hasPermission(["MANAGE_ROLES"])) {
             return msg.channel.send({ embed: { color: "RED", description: "Você não tem permissão para esse comando!" } })
 
-        } else {const [mention, roleArg] = args;
+        } else {
+
+            const [mention, roleArg] = args;
             console.log(args)
             const member = msg.mentions.members.first();
             if (!member)
