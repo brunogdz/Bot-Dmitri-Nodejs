@@ -77,3 +77,18 @@ bot.on("message", (msg) => {
         // return msg.reply("Ops! Não aprendi esse comando ainda!");
     }
 });
+
+bot.on('guildMemberAdd', member => {
+    // Send the message to a designated channel on a server:
+    const channel = member.guild.channels.cache.find(ch => ch.name === 'bem-vindo');
+    // Do nothing if the channel wasn't found on this server
+    if (!channel) return;
+    // Send the message, mentioning the member
+    const embed = new MessageEmbed()
+        // .setTitle(`Seja muito bem-vindo(a) ${member.user.username} ao servidor!!`)
+        .setThumbnail(`${member.user.displayAvatarURL()}`)
+        .setDescription(`Seja muito bem-vindo(a) ${member} ao servidor!!`)
+        .setImage("https://media.giphy.com/media/iYDlg0CljYqTm/giphy.gif")
+    channel.send(embed);
+
+});
