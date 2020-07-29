@@ -5,7 +5,7 @@ const path = require("path");
 const Translate = require('@google-cloud/translate');
 const KSoftClient = require('@ksoft/api');
 const cheerio = require('cheerio');
-
+const MessageEmbed = require("discord.js").MessageEmbed;
 
 
 dotenv.config();
