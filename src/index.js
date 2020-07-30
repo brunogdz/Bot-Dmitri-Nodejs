@@ -87,7 +87,7 @@ bot.on('guildMemberAdd', member => {
     const embed = new MessageEmbed()
         // .setTitle(`Seja muito bem-vindo(a) ${member.user.username} ao servidor!!`)
         .setThumbnail(`${member.user.displayAvatarURL()}`)
-        .setDescription(`Seja muito bem-vindo(a) ${member} ao servidor!!`)
+        .setDescription(`Seja muito bem-vindo(a) ${member} ao servidor!! Membro nº ${member.guild.memberCount}`)
         .setImage("https://media.giphy.com/media/iYDlg0CljYqTm/giphy.gif")
     channel.send(embed);
 
