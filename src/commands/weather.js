@@ -37,14 +37,14 @@ const buscaDados = async (s) => {
 
         const resultado = await axios.get(urllimitada)
         const Plus = await axios.get(url)
-        const { temp: Temperatura, date: Data } = resultado.data
+        const { date: Data } = resultado.data
         const { date: data1, max: Max1, min: Min1 } = Plus.data.results.forecast[0]
         const { date: data2, max: Max2, min: Min2 } = Plus.data.results.forecast[1]
-        console.log(Temperatura, Data, data1, Max1, Min1, data2, Max2, Min2)
+        console.log( Data, data1, Max1, Min1, data2, Max2, Min2)
         console.log(resultado.data)
+        
 
-
-        const { description: Descricao, currently: status, city: Cidade, humidity: Umidade, wind_speedy: Speed, sunrise: Nascer, sunset: Por, time: Hora } = Plus.data.results
+        const { temp: Temperatura, description: Descricao, currently: status, city: Cidade, humidity: Umidade, wind_speedy: Speed, sunrise: Nascer, sunset: Por, time: Hora } = Plus.data.results
 
         console.log(Plus.data)
         console.log((Plus.data).results.forecast)
@@ -67,6 +67,7 @@ const buscaDados = async (s) => {
             Por
 
         }
+        
     } catch (e) {
         console.error(e)
     }
