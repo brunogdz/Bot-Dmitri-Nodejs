@@ -29,30 +29,7 @@ async function execute(bot, msg, args) {
 }
 async function traduzir(language, b) {
     try {
-        // axios({
-        //     "method": "POST",
-        //     "url": "https://simple-elegant-translation-service.p.rapidapi.com/translate",
-        //     "headers": {
-        //         "content-type": "application/json",
-        //         "x-rapidapi-host": "simple-elegant-translation-service.p.rapidapi.com",
-        //         "x-rapidapi-key": "3da1d5bb6dmsh1efbd62e8c685aep18e4f0jsn3b27a822a344",
-        //         "accept": "application/json",
-        //         "useQueryString": true,
-        //         "target":"pt"
-        //     }, "data": {
-        //         "text":`${s}`,
-        //         "dest": `${language}`
-
-        // }
-        // })
-        //     .then((response) => {
-        //         console.log(response)
-        //         response.data["translated"]["2.destination language"]
-        //         console.log(response.data["translated"])
-        //     })
-        //     .catch((error) => {
-        //         console.log(error)
-        //     })
+        
         const response = await axios({
             "method": "POST",
             "url": "https://simple-elegant-translation-service.p.rapidapi.com/translate",
@@ -77,30 +54,7 @@ async function traduzir(language, b) {
 }
 async function traduzido(language, b) {
     try {
-        // axios({
-        //     "method": "POST",
-        //     "url": "https://simple-elegant-translation-service.p.rapidapi.com/translate",
-        //     "headers": {
-        //         "content-type": "application/json",
-        //         "x-rapidapi-host": "simple-elegant-translation-service.p.rapidapi.com",
-        //         "x-rapidapi-key": "3da1d5bb6dmsh1efbd62e8c685aep18e4f0jsn3b27a822a344",
-        //         "accept": "application/json",
-        //         "useQueryString": true,
-        //         "target":"pt"
-        //     }, "data": {
-        //         "text":`${s}`,
-        //         "dest": `${language}`
-
-        // }
-        // })
-        //     .then((response) => {
-        //         console.log(response)
-        //         response.data["translated"]["2.destination language"]
-        //         console.log(response.data["translated"])
-        //     })
-        //     .catch((error) => {
-        //         console.log(error)
-        //     })
+        
         const response = await axios({
             "method": "POST",
             "url": "https://simple-elegant-translation-service.p.rapidapi.com/translate",
@@ -144,28 +98,7 @@ function idiomas() {
 
 async function detectar(s) {
     try {
-        // axios({
-        //     "method": "POST",
-        //     "url": "https://simple-elegant-translation-service.p.rapidapi.com/detectLanguage",
-        //     "headers": {
-        //         "content-type": "application/json",
-        //         "x-rapidapi-host": "simple-elegant-translation-service.p.rapidapi.com",
-        //         "x-rapidapi-key": "3da1d5bb6dmsh1efbd62e8c685aep18e4f0jsn3b27a822a344",
-        //         "accept": "application/json",
-        //         "useQueryString": true
-        //     }, "data": {
-        //         "text": `${s}`
-        //     }
-        // })
-        //     .then((response) => {
-        //         // console.log(response.data["detect language"]["1.language"])
-        //         let p = response.data["detect language"]["1.language"];
-        //         console.log(p)
-        //         return p
-        //     })
-        //     .catch((error) => {
-        //         // console.log(error)
-        //     })
+        
         const response = await axios({
             "method": "POST",
             "url": "https://simple-elegant-translation-service.p.rapidapi.com/detectLanguage",
