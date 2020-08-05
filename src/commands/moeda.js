@@ -171,7 +171,7 @@ async function execute(bot, msg, args) {
             default:
                 const embedn = new MessageEmbed()
                     .setTitle("Mostra a cotação da moeda em tempo real")
-                    .setDescription("Por favor insira o nome da moeda, por exemplo:\n\n.moeda iene ou .moeda peso\n\nMoedas disponiveis para pesquisar: dolar, euro, turismo, canada, libra, bitcoin, litecoin, iene, franco e peso")
+                    .setDescription("Por favor insira o nome da moeda, por exemplo:\n\n.moeda iene ou .moeda peso\n\nMoedas disponiveis para pesquisar: dolar, euro, turismo, canada, libra, bitcoin, litecoin, iene, franco e peso argentino")
                     .setThumbnail("https://media.giphy.com/media/xTiTnqUxyWbsAXq7Ju/giphy.gif")
                 msg.channel.send(embedn)
 

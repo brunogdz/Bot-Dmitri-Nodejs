@@ -13,6 +13,6 @@ const execute = (bot, msg, args) => {
 
 module.exports = {
     name: "embed",
-    help: "Retorna uma MessageEmbed",
+    help: "Retorna uma Mensagem informativa",
     execute,
 };
