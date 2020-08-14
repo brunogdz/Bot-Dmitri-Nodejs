@@ -13,7 +13,7 @@ const execute = (bot, msg, args) => {
 
 module.exports = {
     name: "convite",
-    aliases: ["invite"],
+    aliases: ["invite","convidar"],
     help: "Link para convidar o bot para o servidor, assim você me ajuda a divulgar :)",
     execute,
 }
