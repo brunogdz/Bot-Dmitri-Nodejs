@@ -56,14 +56,14 @@ bot.on("ready", function () {
         }
 
         if (index == 2) {
-            bot.user.setActivity('digite ;help', { type: 'LISTENING' }) // sets bot's activities to one of the phrases in the arraylist.
+            bot.user.setActivity('digite .help', { type: 'LISTENING' }) // sets bot's activities to one of the phrases in the arraylist.
         }
 
         if (index == 3) {
             bot.user.setActivity(`ON ${bot.guilds.cache.size}`, { type: 'LISTENING' })
         }
 
-        bot.user.setActivity(';help', { type: 'WATCHING' })
+        bot.user.setActivity('.help', { type: 'WATCHING' })
 
     }; setInterval(setStatus, 10000); // Runs this every 10 seconds.
     
