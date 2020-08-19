@@ -14,11 +14,11 @@ const execute = async (bot, message, args) => {
             dynamic: true,
             size: 1024
         })
-        var joinargs = args.join(" ");
-        if (joinargs.length > 75) {
-            message.channel.send(" Muito grande! Tente escrever menos que 75 caracteres");
-            return;
-        }
+        // var joinargs = args.join(" ");
+        // if (joinargs.length > 75) {
+        //     message.channel.send(" Muito grande! Tente escrever menos que 75 caracteres");
+        //     return;
+        // }
 
         if (user) {
             const argsWithoutMentions = []

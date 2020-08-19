@@ -2,18 +2,9 @@ const axios = require('axios')
 const { MessageEmbed } = require('discord.js');
 
 async function execute(bot, msg, args) {
-    // let url, response, account, details;
     try {
-        // url = `https://instagram.com/${args[0]}/?__a=1`;
-        // response = await axios.get(url)
-        // account = response.data
-        // // message.channel.send(`${account}`)
-        // details = account.graphql.user
-        // // message.channel.send(`${details}`)
         const a = args.join(" ");
         const dadosAPI = await buscaDadosAPI(a);
-
-
         const embed = new MessageEmbed()
             .setTitle(`${dadosAPI.Verified ? `${dadosAPI.UserName} <a:verified:727820439497211994>` : ` ${dadosAPI.UserName}`} ${dadosAPI.Private ? '🔒' : ''} `)
             .setDescription(dadosAPI.Biography)
@@ -37,10 +28,8 @@ async function execute(bot, msg, args) {
             )
         await msg.channel.send(embed)
     } catch (error) {
-
         return msg.channel.send(`${error}`)
     }
-
 }
 const buscaDadosAPI = async (a) => {
     try {
@@ -61,8 +50,6 @@ const buscaDadosAPI = async (a) => {
             Seguidores,
             Seguindo
         }
-
-
     } catch (erro) {
         console.log(erro);
     }
