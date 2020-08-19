@@ -7,7 +7,7 @@ const execute = async (bot, message, args) => {
         url = `https://instagram.com/${args[0]}/?__a=1`;
         response = await axios.get(url)
         account = response.data
-        message.channel.send(account)
+        
         details = account.graphql.user
         
 
@@ -36,7 +36,7 @@ const execute = async (bot, message, args) => {
         await message.channel.send(embed)
     } catch (error) {
 
-        return message.channel.send(`${error}`)
+        return message.channel.send(`${account}`)
     }
 
 }
