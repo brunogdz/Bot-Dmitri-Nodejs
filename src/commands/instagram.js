@@ -9,6 +9,7 @@ const execute = async (bot, message, args) => {
         account = response.data
         details = account.graphql.user
     } catch (error) {
+        message.channel.send(error);
         return message.channel.send(`Não achei a conta`)
     }
 
