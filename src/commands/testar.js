@@ -35,10 +35,10 @@ async function execute(bot, msg, args) {
                     inline: true
                 }
             )
-        await message.channel.send(embed)
+        await msg.channel.send(embed)
     } catch (error) {
 
-        return message.channel.send(`${error}`)
+        return msg.channel.send(`${error}`)
     }
 
 }
