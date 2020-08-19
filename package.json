@@ -28,7 +28,7 @@
     "genius-lyrics-api": "^3.0.0",
     "got": "^11.5.1",
     "moment": "^2.27.0",
-    "yt-search": "^2.0.1",
+    "yt-search": "^2.1.9",
     "ytdl-core-discord": "^1.2.0",
     "ytpl": "^0.2.0"
   },

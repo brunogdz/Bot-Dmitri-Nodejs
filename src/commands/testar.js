@@ -42,8 +42,8 @@ const execute = async (bot, message, args) => {
 }
 
 module.exports = {
-    name: "instagram",
-    aliases: ["insta"],
+    name: "testar",
+    aliases: ["testando"],
     help: "Mostra as informações do usuario do instagram",
     execute,
 
