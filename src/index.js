@@ -8,6 +8,8 @@ const cheerio = require('cheerio');
 const MessageEmbed = require("discord.js").MessageEmbed;
 
 
+
+
 dotenv.config();
 
 
@@ -30,33 +32,41 @@ const activities = [`${bot.guilds.size} servers!`, "Duvidas? digite .help"]
 bot.on("ready", function () {
 
     console.log(`Estou conectado como ${bot.user.username}`);
-    console.log(bot.guilds.cache.size)
+    console.log()
+    //const s1 = bot.user.setActivity('Estou online', { type: 'STREAMING', url: 'https://www.twitch.tv/dmitritv' })
+    // const s2 = activities;
+    // // intervalo entre status
+    // function randomStatus() {
+    //     let status = ["Discord bot",]
+    // }
+     // creates an arraylist containing phrases you want your bot to switch through.
 
-    const activities_list = [
-        "Streaming",
-        "Watching",
-        "digite .help",
-        "Estou on"
-    ]; // creates an arraylist containing phrases you want your bot to switch through.
-
-
-    setInterval(() => {
+    // bot.user.setActivity(`em ${bot.user.guilds}`)
+    function setStatus() {
+        let activities_list = [
+            "Streaming",
+            "Watching",
+            "digite .help",
+            "Estou on",
+        ];
         const index = Math.floor(Math.random() * (activities_list.length)); // generates a random number between 1 and the length of the activities array list (in this case 5).
+        
         if (index == 1) {
             bot.user.setActivity('Estou online', { type: 'STREAMING', url: 'https://www.twitch.tv/dmitritv' })
         }
 
         if (index == 2) {
-            bot.user.setActivity('digite .help', { type: 'LISTENING' }) // sets bot's activities to one of the phrases in the arraylist.
+            bot.user.setActivity('digite ;help', { type: 'LISTENING' }) // sets bot's activities to one of the phrases in the arraylist.
         }
 
         if (index == 3) {
-            bot.user.setActivity('Estou online', { type: 'STREAMING', url: 'https://www.twitch.tv/dmitritv' })
+            bot.user.setActivity(`ON ${bot.guilds.cache.size}`, { type: 'LISTENING' })
         }
 
-        bot.user.setActivity('.help', { type: 'WATCHING' })
+        bot.user.setActivity(';help', { type: 'WATCHING' })
 
-    }, 20000); // Runs this every 10 seconds.
+    }; setInterval(setStatus, 10000); // Runs this every 10 seconds.
+    
 });
 
 
@@ -87,8 +97,8 @@ bot.on('guildMemberAdd', member => {
     const embed = new MessageEmbed()
         // .setTitle(`Seja muito bem-vindo(a) ${member.user.username} ao servidor!!`)
         .setThumbnail(`${member.user.displayAvatarURL()}`)
-        .setDescription(`Seja muito bem-vindo(a) ${member} ao servidor!! Membro nº ${member.guild.memberCount}`)
+        .setDescription(`Seja muito bem-vindo(a) ${member} ao servidor!!`)
         .setImage("https://media.giphy.com/media/iYDlg0CljYqTm/giphy.gif")
     channel.send(embed);
 
-});
+  });
