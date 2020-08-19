@@ -46,3 +46,9 @@ const execute = async (bot, message, args) => {
     }
 
 }
+
+module.exports = {
+    name: "youtube",
+    help: "Finge um comentário do youtube, escreva .youtube [texto] / se quiser colocar como sendo outro usuario é do mesmo jeito. @[use] [texto]",
+    execute,
+}
