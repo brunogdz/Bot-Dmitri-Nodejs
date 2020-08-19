@@ -9,7 +9,7 @@ const execute = async (bot, message, args) => {
         account = response.data
         details = account.graphql.user
     } catch (error) {
-        return message.channel.send(`Not A Account`)
+        return message.channel.send(`Não achei a conta`)
     }
 
     const embed = new MessageEmbed()
@@ -40,6 +40,7 @@ const execute = async (bot, message, args) => {
 
 module.exports = {
     name: "instagram",
+    aliases: ["insta"],
     help: "Mostra as informações do usuario do instagram",
     execute,
 
