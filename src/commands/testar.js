@@ -1,7 +1,7 @@
 const axios = require('axios')
 const { MessageEmbed } = require('discord.js');
 
-const execute = async (bot, message, args) => {
+async function execute(bot, msg, args) {
     // let url, response, account, details;
     try {
         // url = `https://instagram.com/${args[0]}/?__a=1`;
@@ -11,7 +11,7 @@ const execute = async (bot, message, args) => {
         // details = account.graphql.user
         // // message.channel.send(`${details}`)
         const a = args.join(" ");
-        const dadosAPI = await buscaDadosAPI(a, message);
+        const dadosAPI = await buscaDadosAPI(a);
 
 
         const embed = new MessageEmbed()
@@ -42,11 +42,11 @@ const execute = async (bot, message, args) => {
     }
 
 }
-const buscaDadosAPI = async (a, message) => {
+const buscaDadosAPI = async (a) => {
     try {
         var url = `https://instagram.com/${encodeURI(a)}/?__a=1`;
         const resultado = await axios.get(url);
-        // console.log(resultado)
+        console.log(resultado)
         const { is_verified: Verified, username: UserName, is_private: Private, biography: Biography, profile_pic_url: ProfilePic } = resultado.data.graphql.user;
         const { count: Publicacoes } = resultado.data.graphql.user.edge_owner_to_timeline_media;
         const { count: Seguidores } = resultado.data.graphql.user.edge_followed_by;
