@@ -46,7 +46,7 @@ const buscaDadosAPI = async (a) => {
     try {
         var url = `https://instagram.com/${encodeURI(a)}/?__a=1`;
         const resultado = await axios.get(url);
-        console.log(resultado)
+        console.log(resultado.data)
         const { is_verified: Verified, username: UserName, is_private: Private, biography: Biography, profile_pic_url: ProfilePic } = resultado.data.graphql.user;
         const { count: Publicacoes } = resultado.data.graphql.user.edge_owner_to_timeline_media;
         const { count: Seguidores } = resultado.data.graphql.user.edge_followed_by;
