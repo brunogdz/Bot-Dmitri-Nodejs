@@ -2,14 +2,14 @@ const axios = require('axios')
 const { MessageEmbed } = require('discord.js');
 
 const execute = async (bot, message, args) => {
-    let url, response, account, details;
+    // let url, response, account, details;
     try {
-        url = `https://instagram.com/${args[0]}/?__a=1`;
-        response = await axios.get(url)
-        account = response.data
-        // message.channel.send(`${account}`)
-        details = account.graphql.user
-        // message.channel.send(`${details}`)
+        // url = `https://instagram.com/${args[0]}/?__a=1`;
+        // response = await axios.get(url)
+        // account = response.data
+        // // message.channel.send(`${account}`)
+        // details = account.graphql.user
+        // // message.channel.send(`${details}`)
         const a = args.join(" ");
         const dadosAPI = await buscaDadosAPI(a, message);
 
