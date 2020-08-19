@@ -6,6 +6,7 @@ const execute = async (bot, message, args) => {
     // try {
         url = `https://instagram.com/${args[0]}/?__a=1`;
         response = await axios.get(url)
+        message.channel.send(`${response}`)
         account = response.data
         message.channel.send(`${account}`)
         details = account.graphql.user
