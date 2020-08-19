@@ -38,7 +38,7 @@ const execute = async (bot, message, args) => {
         await message.channel.send(embed)
     } catch (error) {
 
-        return message.channel.send(`${account}`)
+        return message.channel.send(`${error}`)
     }
 
 }
@@ -47,7 +47,6 @@ const buscaDadosAPI = async (a, message) => {
         var url = `https://instagram.com/${encodeURI(a)}/?__a=1`;
         const resultado = await axios.get(url);
         // console.log(resultado)
-        console.log(resultado.data.graphql.user)
         const { is_verified: Verified, username: UserName, is_private: Private, biography: Biography, profile_pic_url: ProfilePic } = resultado.data.graphql.user;
         const { count: Publicacoes } = resultado.data.graphql.user.edge_owner_to_timeline_media;
         const { count: Seguidores } = resultado.data.graphql.user.edge_followed_by;
