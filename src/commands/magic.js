@@ -38,6 +38,7 @@ function getRandomInt(min, max) {
 
 module.exports = {
     name: "magic",
+    aliases: ["8ball"],
     help: "Escreva uma pergunta, usando o ;magic [pergunta] e veja a resposta",
     execute,
 }
