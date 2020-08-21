@@ -107,7 +107,7 @@ const buscaDadosAPI = async (a) => {
 module.exports = {
     name: "instagram",
     aliases: ["insta"],
-    help: "Mostra as informações do usuario do instagram",
+    help: "Mostra as informações do usuario do instagram, comando em beta",
     execute,
 
 }
