@@ -1,45 +1,108 @@
 const axios = require('axios')
 const { MessageEmbed } = require('discord.js');
+const fetch = require("node-fetch");
 
-const execute = async (bot, message, args) => {
-    let url, response, account, details;
+async function execute(bot, msg, args) {
     try {
-        url = `https://instagram.com/${args[0]}/?__a=1`;
-        response = await axios.get(url)
-        account = response.data
-        
-        details = account.graphql.user
-        
-
-
+        const a = args.join(" ");
+        const dadosAPI = await buscaDadosAPI(a);
         const embed = new MessageEmbed()
-            .setTitle(`${details.is_verified ? `${details.username} <a:verified:727820439497211994>` : ` ${details.username}`} ${details.is_private ? '🔒' : ''} `)
-            .setDescription(details.biography)
-            .setThumbnail(details.profile_pic_url)
+            .setTitle(`${dadosAPI.Verified ? `${dadosAPI.UserName} <a:verified:727820439497211994>` : ` ${dadosAPI.UserName}`} ${dadosAPI.Private ? '🔒' : ''} `)
+            .setDescription(dadosAPI.Biography)
+            .setThumbnail(dadosAPI.ProfilePic)
             .addFields(
                 {
-                    name: "Publicações",
-                    value: details.edge_owner_to_timeline_media.count.toLocaleString(),
+                    name: "Nome Completo",
+                    value: dadosAPI.FullName,
                     inline: true
                 },
                 {
                     name: "Seguidores",
-                    value: details.edge_followed_by.count.toLocaleString(),
+                    value: dadosAPI.Seguidores,
                     inline: true
                 },
                 {
                     name: "Seguindo",
-                    value: details.edge_follow.count.toLocaleString(),
+                    value: dadosAPI.Seguindo,
                     inline: true
-                }
+                },
+                {
+                    name: "Perfil de negócios",
+                    value: dadosAPI.T,
+                    inline: true
+                },
+                {
+                    name: "Categoria ",
+                    value: dadosAPI.Categoria,
+                    inline: true
+                },
             )
-        await message.channel.send(embed)
+        await msg.channel.send(embed)
+
     } catch (error) {
-
-        return message.channel.send(`${account}`)
+        msg.channel.send('Invalid username')
     }
-
 }
+const buscaDadosAPI = async (a) => {
+    try {
+
+
+
+        const resultado = await axios({
+            "method": "GET",
+            "url": "https://instagram-profile-picture1.p.rapidapi.com/api/v1/profile/data",
+            "headers": {
+                "content-type": "application/octet-stream",
+                "x-rapidapi-host": "instagram-profile-picture1.p.rapidapi.com",
+                "x-rapidapi-key": "3da1d5bb6dmsh1efbd62e8c685aep18e4f0jsn3b27a822a344",
+                "useQueryString": true
+            }, "params": {
+                "username": `${a}`,
+            }
+        })
+        const ta = resultado.data;
+        console.log(ta)
+        console.log(resultado)
+        const { isVerified: Verified, username: UserName, isPrivate: Private, biography: Biography, profilePicUrl: ProfilePic, isBusinessAccount: Business, fullName: FullName, businessCategoryName: Categoria } = resultado.data.data.graphql.user;
+        // const { count: Publicacoes } = resultado.data.graphql.user.edge_owner_to_timeline_media;
+        const { count: Seguidores } = resultado.data.data.graphql.user.igQueryEdgeFollowedBy;
+        const { count: Seguindo } = resultado.data.data.graphql.user.igQueryEdgeFollow;
+        if (!Business) {
+            const T = "Não"
+            const C = "Sem nenhuma categoria"
+            Categoria = C;
+            return {
+                Verified,
+                UserName,
+                Private,
+                Biography,
+                ProfilePic,
+                Seguidores,
+                Seguindo,
+                T,
+                FullName,
+                Categoria
+            }
+        } else {
+            const T = "Sim";
+            return {
+                Verified,
+                UserName,
+                Private,
+                Biography,
+                ProfilePic,
+                Seguidores,
+                Seguindo,
+                T,
+                FullName,
+                Categoria
+            }
+        }
+    } catch (err) {
+        console.log('Invalid username')
+    }
+}
+
 
 module.exports = {
     name: "instagram",
