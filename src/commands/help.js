@@ -41,6 +41,10 @@ const execute = async (bot, msg, args) => {
     "-----------------------",
     ".memeNA | memena | memesna | memesNA",
     "Mostra memes americanos ",
+    "-----------------------",
+    ".gemidao",
+    "Escreve o gemidão kk",
+    
   ];
 
   let musicas = [
