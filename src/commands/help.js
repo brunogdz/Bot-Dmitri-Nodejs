@@ -114,7 +114,7 @@ const execute = async (bot, msg, args) => {
     ".jogador nome",
     "-----------------------",
     ".insta",
-    ".insta @nome",
+    ".insta nome",
     "-----------------------",
     "Idiomas suportados para traduzir:",
     "af - afrikaans",
