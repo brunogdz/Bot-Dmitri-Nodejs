@@ -63,11 +63,14 @@ const buscaDadosAPI = async (a) => {
         const ta = resultado.data;
         console.log(ta)
         console.log(resultado)
-        const { isVerified: Verified, username: UserName, isPrivate: Private, biography: Biography, profilePicUrl: ProfilePic, isBusinessAccount: Business, fullName: FullName, businessCategoryName: Categoria } = resultado.data.data.graphql.user;
+        let { isVerified: Verified, username: UserName, isPrivate: Private, biography: Biography, profilePicUrl: ProfilePic, isBusinessAccount: Business, fullName: FullName, businessCategoryName: Categoria } = resultado.data.data.graphql.user;
         // const { count: Publicacoes } = resultado.data.graphql.user.edge_owner_to_timeline_media;
         const { count: Seguidores } = resultado.data.data.graphql.user.igQueryEdgeFollowedBy;
         const { count: Seguindo } = resultado.data.data.graphql.user.igQueryEdgeFollow;
-        if (!Business) {
+        const teste = "Sem nenhuma categoria";
+
+
+        if (Business != true) {
             const T = "Não"
             const C = "Sem nenhuma categoria"
             Categoria = C;
