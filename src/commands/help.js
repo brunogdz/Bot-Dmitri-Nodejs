@@ -106,6 +106,9 @@ const execute = async (bot, msg, args) => {
     "-----------------------",
     ".binario",
     ".binario texto",
+    "-----------------------",
+    ".cep",
+    ".cep 12345-678",
     
 ];
 
