@@ -2,6 +2,12 @@
 
 Um bot do discord feito para tocar musicas e usar muitas APIs haha
 
+# USO
+
+.help 
+ou 
+.[comando]
+
 
 ## Configurando o Projeto
 
@@ -36,6 +42,7 @@ Um bot do discord feito para tocar musicas e usar muitas APIs haha
 - [x] - translate: Traduz para o idioma que quer
 - [x] - vol: Ajusta o volume numa escala de 0 a 10
 - [x] - clima: Mostra o clima de uma cidade
+- [x] - cep: Mostra os dados do CEP para ver se é válido
 
 ### Configurando servidor
 
