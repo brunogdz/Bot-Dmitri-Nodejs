@@ -14,7 +14,7 @@ async function execute(bot, msg, args) {
             {name: `Minima hoje:${dadosAPI.Min1}°C`, value: "⠀", inline: true},
             {name: `Amanhã:${dadosAPI.data2}`, value: "⠀", inline: true},
             {name: `Maxima amanhã:${dadosAPI.Max2}°C`, value: "⠀", inline: true},
-            {name: `Maxima amanhã:${dadosAPI.Min2}°C`, value: "⠀", inline: true},
+            {name: `Minima amanhã:${dadosAPI.Min2}°C`, value: "⠀", inline: true},
             {name: `Tempo está:${dadosAPI.Descricao}`, value: "⠀"},
             {name: `Umidade: ${dadosAPI.Umidade}%`, value: "⠀"},
             {name: `Vento: ${dadosAPI.Speed}`, value: "⠀"},
