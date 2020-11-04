@@ -8,7 +8,7 @@
     "start": "node src/index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Bruno Gomes de Azevedo",
   "license": "ISC",
   "dependencies": {
     "@discordjs/opus": "^0.3.3",
