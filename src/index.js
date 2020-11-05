@@ -75,7 +75,7 @@ bot.on("ready", function () {
 
         if(i === activities_list.length) i = i - activities_list.length;
 
-    }, 1000 * 60)
+    }, 20000)
  
     //setInterval(setStatus, 10000); // Runs this every 10 seconds.
     
