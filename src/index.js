@@ -24,6 +24,14 @@ for (var filename of commandFiles) {
     bot.commands.set(command.name, command);
 }
 
+let activities_list = [
+    `Streaming`,
+    `${bot.users.cache.size} usuarios!`,
+    `digite .help`,
+    `Online em ${bot.guilds.cache.size} servidores`,
+];
+
+let i = 0;
 
 bot.login(process.env.TOKEN);
 
@@ -41,14 +49,9 @@ bot.on("ready", function () {
 
     // bot.user.setActivity(`em ${bot.user.guilds}`)
 
-    let activities_list = [
-        `Streaming`,
-        `${bot.users.cache.size} usuarios!`,
-        `digite .help`,
-        `Online em ${bot.guilds.cache.size} servidores`,
-    ];
+    
 
-    let i = 0;
+    
     //function setStatus() {
         
         setInterval(() => {
