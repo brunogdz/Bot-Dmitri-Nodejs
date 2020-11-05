@@ -71,8 +71,9 @@ bot.on("ready", function () {
             bot.user.setActivity( `Online em ${bot.guilds.cache.size} servidores`, { type: 'LISTENING' })
         }
 
-        bot.user.setActivity(`${bot.users.cache.size} usuarios!`, { type: 'WATCHING' })
-
+        if( index == 3){
+            bot.user.setActivity(`${bot.users.cache.size} usuarios!`, { type: 'WATCHING' })
+        }
         if(i === activities_list.length) i = i - activities_list.length;
 
     }, 20000)
