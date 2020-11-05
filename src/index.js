@@ -27,8 +27,6 @@ for (var filename of commandFiles) {
 
 bot.login(process.env.TOKEN);
 
-const activities = [`${bot.guilds.size} servers!`, "Duvidas? digite .help"]
-
 bot.on("ready", function () {
 
     console.log(`Estou conectado como ${bot.user.username}`);
@@ -42,16 +40,26 @@ bot.on("ready", function () {
      // creates an arraylist containing phrases you want your bot to switch through.
 
     // bot.user.setActivity(`em ${bot.user.guilds}`)
-    function setStatus() {
-        let activities_list = [
-            "Streaming",
-            "Watching",
-            "digite .help",
-            "Estou on",
-        ];
-        let index = Math.floor(Math.random() * (activities_list.length)); // generates a random number between 1 and the length of the activities array list (in this case 5).
+
+    let activities_list = [
+        `Streaming`,
+        `${bot.users.cache.size} usuarios!`,
+        `digite .help`,
+        `Online em ${bot.guilds.cache.size} servidores`,
+    ];
+
+    let i = 0;
+    //function setStatus() {
         
-        if (index == 1) {
+        setInterval(() => {
+
+        
+        // setInterval(() => bot.user.setActivity(`${activities_list[i++ %activities_list.length]}`,{
+        //     type: "WATCHING"
+        // }),5000);
+        let index = Math.floor(i); // generates a random number between 1 and the length of the activities array list (in this case 5).
+        
+        if (index == 0) {
             bot.user.setActivity('Estou online', { type: 'STREAMING', url: 'https://www.twitch.tv/dmitritv' })
         }
 
@@ -60,12 +68,16 @@ bot.on("ready", function () {
         }
 
         if (index == 3) {
-            bot.user.setActivity(`ON ${bot.guilds.cache.size}`, { type: 'LISTENING' })
+            bot.user.setActivity( `Online em ${bot.guilds.cache.size} servidores`, { type: 'LISTENING' })
         }
 
-        bot.user.setActivity('.help', { type: 'WATCHING' })
+        bot.user.setActivity(`${bot.users.cache.size} usuarios!`, { type: 'WATCHING' })
 
-    }; setInterval(setStatus, 10000); // Runs this every 10 seconds.
+        if(i === activities_list.length) i = i - activities_list.length;
+
+    }, 5000)
+ 
+    //setInterval(setStatus, 10000); // Runs this every 10 seconds.
     
 });
 
