@@ -74,6 +74,7 @@ bot.on("ready", function () {
         if( index == 3){
             bot.user.setActivity(`${bot.users.cache.size} usuarios!`, { type: 'WATCHING' })
         }
+        i = i+1;
         if(i === activities_list.length) i = i - activities_list.length;
 
     }, 20000)
