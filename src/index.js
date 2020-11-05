@@ -63,11 +63,11 @@ bot.on("ready", function () {
             bot.user.setActivity('Estou online', { type: 'STREAMING', url: 'https://www.twitch.tv/dmitritv' })
         }
 
-        if (index == 2) {
+        if (index == 1) {
             bot.user.setActivity('digite .help', { type: 'LISTENING' }) // sets bot's activities to one of the phrases in the arraylist.
         }
 
-        if (index == 3) {
+        if (index == 2) {
             bot.user.setActivity( `Online em ${bot.guilds.cache.size} servidores`, { type: 'LISTENING' })
         }
 
@@ -75,7 +75,7 @@ bot.on("ready", function () {
 
         if(i === activities_list.length) i = i - activities_list.length;
 
-    }, 5000)
+    }, 1000 * 60)
  
     //setInterval(setStatus, 10000); // Runs this every 10 seconds.
     
