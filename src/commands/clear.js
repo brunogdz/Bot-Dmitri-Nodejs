@@ -2,6 +2,7 @@ const execute = (bot, msg, args) => {
     if (msg.deletable) {
         msg.delete();
     }
+    
 
     if(isNaN(args[0]) || parseInt(args[0]) <= 0) {
         return msg.reply("Oloko! Tu não colocou nenhum número pra apagar");
@@ -19,6 +20,7 @@ const execute = (bot, msg, args) => {
     .then(deleted => msg.channel.send(`Eu deletei \`${deleted.size}\` mensagens.`))
     .catch(err => msg.reply(`Deu erro ai meu bom 🙉🙉🦖🦖  ${err}`));
 
+    msg.delete().catch((O_o) => {});
 }
 
 module.exports = {
