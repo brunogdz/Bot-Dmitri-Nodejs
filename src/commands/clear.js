@@ -1,3 +1,5 @@
+const { delete } = require("request-promise-native");
+
 const execute = (bot, msg, args) => {
     if (msg.deletable) {
         msg.delete();
@@ -20,7 +22,7 @@ const execute = (bot, msg, args) => {
     .then(deleted => msg.channel.send(`Eu deletei \`${deleted.size}\` mensagens.`))
     .catch(err => msg.reply(`Deu erro ai meu bom 🙉🙉🦖🦖  ${err}`));
 
-    msg.delete().catch((O_o) => {});
+    
 }
 
 module.exports = {
