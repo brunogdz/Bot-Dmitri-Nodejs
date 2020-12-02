@@ -1,5 +1,3 @@
-const { delete } = require("request-promise-native");
-
 const execute = (bot, msg, args) => {
     if (msg.deletable) {
         msg.delete();
