@@ -28,6 +28,7 @@
     "got": "^11.8.0",
     "moment": "^2.29.1",
     "node": "^15.2.1",
+    "node-fetch": "^2.6.1",
     "node-forge": "^0.10.0",
     "request-promise-native": "^1.0.9",
     "yt-search": "^2.5.1",
