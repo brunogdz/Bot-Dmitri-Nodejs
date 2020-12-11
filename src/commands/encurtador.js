@@ -16,7 +16,7 @@ const execute = async (bot, msg, args) => {
 
     const embed = new Discord.MessageEmbed()
         .setColor(`RANDOM`)
-        .setFooter("Desenvolvido pelo Bruno Gomes-ΔŁŦ-#6519")
+        .setFooter("Desenvolvido pelo Bruno Gomes#6519")
         .setDescription(body);
     msg.channel.send(embed);
 

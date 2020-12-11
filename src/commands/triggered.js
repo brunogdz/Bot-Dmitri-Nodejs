@@ -16,7 +16,7 @@ const execute = async (bot, message, args) => {
     const embed = new MessageEmbed()
         .setAuthor(`${user.username} is trigered!!!`, bot.user.displayAvatarURL())
         .setImage(url)
-        .setFooter(`${bot.user.username} | By Bruno Gomes  -ΔŁŦ-#6519`, bot.user.displayAvatarURL());
+        .setFooter(`${bot.user.username} | By Bruno Gomes#6519`, bot.user.displayAvatarURL());
 
     message.channel.send(embed)
 

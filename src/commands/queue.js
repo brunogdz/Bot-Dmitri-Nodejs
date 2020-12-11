@@ -59,6 +59,7 @@ function generateQueue(queue) {
 
 module.exports = {
     name: "queue",
+    aliases: ["q"],
     help: "Mostra a fila de músicas",
     execute,
 };

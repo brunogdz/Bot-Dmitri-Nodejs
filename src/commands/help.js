@@ -156,7 +156,7 @@ const execute = async (bot, msg, args) => {
     "zh-cn - chinese (simplified)",
     "zh-tw - chinese (traditional)",
     "-----------------------",
-    "Desenvolvido pelo Bruno Gomes-ΔŁŦ-#6519",,
+    "Desenvolvido pelo Bruno Gomes#6519",,
 
 
    

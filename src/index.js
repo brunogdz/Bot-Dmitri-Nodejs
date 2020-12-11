@@ -39,27 +39,10 @@ bot.on("ready", function () {
 
     console.log(`Estou conectado como ${bot.user.username}`);
     console.log()
-    //const s1 = bot.user.setActivity('Estou online', { type: 'STREAMING', url: 'https://www.twitch.tv/dmitritv' })
-    // const s2 = activities;
-    // // intervalo entre status
-    // function randomStatus() {
-    //     let status = ["Discord bot",]
-    // }
-     // creates an arraylist containing phrases you want your bot to switch through.
-
-    // bot.user.setActivity(`em ${bot.user.guilds}`)
-
     
-
-    
-    //function setStatus() {
         
         setInterval(() => {
 
-        
-        // setInterval(() => bot.user.setActivity(`${activities_list[i++ %activities_list.length]}`,{
-        //     type: "WATCHING"
-        // }),5000);
         let index = Math.floor(i); // generates a random number between 1 and the length of the activities array list (in this case 5).
         
         if (index == 0) {
@@ -81,8 +64,6 @@ bot.on("ready", function () {
         if(i === activities_list.length) i = i - activities_list.length;
 
     }, 20000)
- 
-    //setInterval(setStatus, 10000); // Runs this every 10 seconds.
     
 });
 
