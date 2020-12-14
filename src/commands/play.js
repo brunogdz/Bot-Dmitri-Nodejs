@@ -38,6 +38,7 @@ const execute = (bot, msg, args) => {
 };
 
 const playSong = async (bot, msg, song) => {
+    try{
     let queue = bot.queues.get(msg.member.guild.id);
     if (!song) {
         if (queue) {
@@ -94,6 +95,9 @@ const playSong = async (bot, msg, song) => {
         playSong(bot, msg, queue.songs[0]);
 
     });
+}catch(e){
+    console.error(e);
+}
 
 };
 
