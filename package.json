@@ -34,7 +34,7 @@
     "yt-search": "^2.5.1",
     "ytdl": "^1.4.1",
     "ytdl-core": "^4.1.4",
-    "ytdl-core-discord": "^1.2.4",
+    "ytdl-core-discord": "^1.2.5",
     "ytpl": "^1.0.1",
     "ytsr": "^1.0.4"
   },
