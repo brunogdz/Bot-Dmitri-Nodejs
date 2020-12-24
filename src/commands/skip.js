@@ -5,6 +5,7 @@ const execute = (bot, msg, args) => {
     if (!queue) {
         return msg.reply("Não existe nenhuma musica na fila seu animal");
     }
+    msg.react('⏭️');
     queue.songs.shift();
     bot.queues.set(msg.guild.id, queue);
     playSong(bot, msg, queue.songs[0]);
