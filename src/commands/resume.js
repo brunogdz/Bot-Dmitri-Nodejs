@@ -3,8 +3,8 @@ const execute = (bot, msg, args) => {
     if (!queue) {
         return msg.reply("Não existe nenhuma musica na fila!");
     }
-    msg.react('▶️');
     queue.dispatcher.resume();
+    msg.react('▶️');
 };
 
 module.exports = {
