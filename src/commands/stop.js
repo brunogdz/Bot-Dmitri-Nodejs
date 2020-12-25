@@ -5,6 +5,7 @@ const execute = (bot, msg, args) => {
     }
     queue.songs = [];
     bot.queues.set(msg.guild.id,queue);
+    msg.react("👍");
     queue.dispatcher.end();
 };
 
