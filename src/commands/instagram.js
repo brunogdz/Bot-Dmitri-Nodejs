@@ -50,24 +50,22 @@ const buscaDadosAPI = async (a) => {
 
         const resultado = await axios({
             "method": "GET",
-            "url": "https://instagram-profile-picture1.p.rapidapi.com/api/v1/profile/data",
+            "url": "https://instagram-data1.p.rapidapi.com/user/info",
             "headers": {
                 "content-type": "application/octet-stream",
-                "x-rapidapi-host": "instagram-profile-picture1.p.rapidapi.com",
+                "x-rapidapi-host": "instagram-data1.p.rapidapi.com",
                 "x-rapidapi-key": "3da1d5bb6dmsh1efbd62e8c685aep18e4f0jsn3b27a822a344",
                 "useQueryString": true
             }, "params": {
-                "username": `${a}`,
+                "username": `${a}`
             }
         })
         const ta = resultado.data;
-
         let { is_verified: Verified, username: UserName, is_private: Private, biography: Biography, profile_pic_url: ProfilePic, is_business_account: Business, full_name: FullName, category_name: Categoria } = resultado.data;
         // const { count: Publicacoes } = resultado.data.graphql.user.edge_owner_to_timeline_media;
         const { count: Seguidores } = resultado.data.edge_followed_by;
         const { count: Seguindo } = resultado.data.edge_follow;
         const teste = "Sem nenhuma categoria";
-
 
 
         if (Business != true) {
@@ -103,6 +101,7 @@ const buscaDadosAPI = async (a) => {
         }
     } catch (err) {
         console.log('Invalid username')
+        
     }
 }
 
