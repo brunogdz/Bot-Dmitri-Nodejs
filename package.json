@@ -27,7 +27,6 @@
     "genius-lyrics": "^4.2.9",
     "genius-lyrics-api": "^3.0.3",
     "got": "^11.8.2",
-    "mkdirp": "github:substack/node-mkdirp",
     "moment": "^2.29.1",
     "node": "^14.17.1",
     "node-fetch": "^2.6.1",
