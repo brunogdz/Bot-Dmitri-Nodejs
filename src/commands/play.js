@@ -4,6 +4,7 @@ const MessageEmbed = require("discord.js").MessageEmbed;
 
 const execute = (bot, msg, args) => {
     const s = args.join(" ");
+    
     try {
         search(s, (err, result) => {
             if (err) {
