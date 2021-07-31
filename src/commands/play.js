@@ -2,6 +2,7 @@ const search = require("yt-search");
 const ytdl = require("ytdl-core-discord");
 const MessageEmbed = require("discord.js").MessageEmbed;
 
+let timeoutID;
 const execute = (bot, msg, args) => {
     const s = args.join(" ");
     
@@ -39,13 +40,23 @@ const execute = (bot, msg, args) => {
 };
 
 const playSong = async (bot, msg, song) => {
+    clearTimeout(timeoutID)
     try{
     let queue = bot.queues.get(msg.member.guild.id);
     if (!song) {
-        if (queue) {
-            queue.connection.disconnect();
-            return bot.queues.delete(msg.member.guild.id);
-        }
+        bot.queues.delete(msg.member.guild.id);
+            timeoutID = setTimeout(() => {
+                const mensagemQuit = new MessageEmbed()
+                    .setColor("#0099ff")
+                    .setTitle('Vou meter o pé já que não tenho mais nada pra tocar!')
+                    .setImage('https://cdn.discordapp.com/avatars/295619301388582914/a_328fcc16c4103389be85363fb4714be6.gif?size=512')
+                msg.channel.send(mensagemQuit)
+                if (queue) {
+                    queue.connection.disconnect();
+
+                    return bot.queues.delete(msg.member.guild.id);
+                }
+            }, 35 * 1000)
     }
     if (!msg.member.voice.channel) {
         if (queue) {
@@ -78,10 +89,11 @@ const playSong = async (bot, msg, song) => {
             volume: 10,
             connection: conn,
             dispatcher: null,
-            songs: [song],
+            songs: [],
         };
 
         bot.queues.set(msg.member.guild.id, queue);
+        queue.songs.push(song);
 
     }
     queue.dispatcher = await queue.connection.play(
