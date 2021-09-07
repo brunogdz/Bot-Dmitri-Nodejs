@@ -56,7 +56,7 @@ const playSong = async (bot, msg, song) => {
 
                     return bot.queues.delete(msg.member.guild.id);
                 }
-            }, 35 * 1000)
+            }, 180 * 1000)
     }
     if (!msg.member.voice.channel) {
         if (queue) {
