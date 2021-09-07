@@ -27,7 +27,7 @@ for (var filename of commandFiles) {
 let activities_list = [
     `Streaming`,
     `${bot.users.cache.size} usuarios!`,
-    `digite .help`,
+    `digite -help`,
     `Online em ${bot.guilds.cache.size} servidores`,
 ];
 
