@@ -47,7 +47,7 @@ async function execute(bot, msg, args) {
                 .setColor('#EBAE34')
                 .setThumbnail(albumArt)
                 .setDescription(lyrics)
-                .setFooter('Powered by KSoft.Si');
+                .setFooter('Desenvolvido por Bruno Gomes');
             return sentmsg.edit('', lyricsEmbed);
         } else {
             // const firstLyricsEmbed = new MessageEmbed()
@@ -77,7 +77,7 @@ async function execute(bot, msg, args) {
                     .setAuthor(`${artist} - ${name}`)
                     .setColor('#EBAE34')
                     .setThumbnail(albumArt)
-                    .setFooter('Powered by KSoft.Si')
+                    .setFooter('Desenvolvido por Bruno Gomes')
                     .addFields(
                         { name: '⠀', value: part1 },
                         { name: '⠀', value: part2 },
@@ -90,7 +90,7 @@ async function execute(bot, msg, args) {
                     .setAuthor(`${artist} - ${name}`)
                     .setColor('#EBAE34')
                     .setThumbnail(albumArt)
-                    .setFooter('Powered by KSoft.Si')
+                    .setFooter('Desenvolvido por Bruno Gomes')
                     .addFields(
                         { name: '⠀', value: part1 },
                         { name: '⠀', value: part2 },
@@ -104,7 +104,7 @@ async function execute(bot, msg, args) {
                     .setAuthor(`${artist} - ${name}`)
                     .setColor('#EBAE34')
                     .setThumbnail(albumArt)
-                    .setFooter('Powered by KSoft.Si')
+                    .setFooter('Desenvolvido por Bruno Gomes')
                     .addFields(
                         { name: '⠀', value: part1 },
                         { name: '⠀', value: part2 },
@@ -119,7 +119,7 @@ async function execute(bot, msg, args) {
                     .setAuthor(`${artist} - ${name}`)
                     .setColor('#EBAE34')
                     .setThumbnail(albumArt)
-                    .setFooter('Powered by KSoft.Si')
+                    .setFooter('Desenvolvido por Bruno Gomes')
                     .addFields(
                         { name: '⠀', value: part1 },
                         { name: '⠀', value: part2 },
@@ -135,7 +135,7 @@ async function execute(bot, msg, args) {
                     .setAuthor(`${artist} - ${name}`)
                     .setColor('#EBAE34')
                     .setThumbnail(albumArt)
-                    .setFooter('Powered by KSoft.Si')
+                    .setFooter('Desenvolvido por Bruno Gomes')
                     .addFields(
                         { name: '⠀', value: part1 },
                         { name: '⠀', value: part2 },
