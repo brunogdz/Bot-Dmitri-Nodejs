@@ -76,7 +76,7 @@ const playSong = async (bot, msg, song) => {
         .setColor("#0099ff")
         .setAuthor(
             "Tocando ♪ ...",
-            "https://media.giphy.com/media/ccu9c0Iu7aGFa/giphy.gif"
+            "https://media.giphy.com/media/kZhoA3JKBUgseOHRAW/source.gif"
         )
         .setTitle(`${song.title}`)
         .setThumbnail(song.thumbnail)
