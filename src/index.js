@@ -50,7 +50,7 @@ bot.on("ready", function () {
         }
 
         if (index == 1) {
-            bot.user.setActivity('digite .help', { type: 'LISTENING' }) // sets bot's activities to one of the phrases in the arraylist.
+            bot.user.setActivity('digite -help', { type: 'LISTENING' }) // sets bot's activities to one of the phrases in the arraylist.
         }
 
         if (index == 2) {
