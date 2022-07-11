@@ -8,6 +8,7 @@ const cheerio = require('cheerio');
 const MessageEmbed = require("discord.js").MessageEmbed;
 
 // dalheeeeeeeeeeeeeeeeee
+// daleee esse yolo2
 
 
 dotenv.config();
