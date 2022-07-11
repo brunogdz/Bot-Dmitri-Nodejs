@@ -7,7 +7,7 @@ const KSoftClient = require('@ksoft/api');
 const cheerio = require('cheerio');
 const MessageEmbed = require("discord.js").MessageEmbed;
 
-
+// dalheeeeeeeeeeeeeeeeee
 
 
 dotenv.config();
